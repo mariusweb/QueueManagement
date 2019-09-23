@@ -15,12 +15,16 @@
 	 	if(textArray[1] >= 100){
 	 		textArray[1] = 0;
 	 	}
-	 	counter.innerHTML = textArray.join(" ");
+		 	let newCounter = counter.innerHTML = textArray.join(" ");
+		 	localStorage.setItem('key', textArray[1]);
+		 	let takingBack = document.querySelector(".taking-back");
+		 	takingBack
 		setTimeout(function () {
 			let showPrimary = document.querySelector(".primary-number").style.display='none';
-			let hideContainer = document.querySelector(".register-container").style.display='flex';	
+			let hideContainer = document.querySelector(".register-container").style.display='flex';
 		}, 3000);
 		});
+		
 
 
 		let secondaryButton = document.querySelector(".btn-secondary");
