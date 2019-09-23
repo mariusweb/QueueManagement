@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body{
+	margin: 0;
+
+}
+header{
+	display: block;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+.register-container{
+	height: 700px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.register-container input{
+	font-size: 2.5rem;
+	padding: 6.5% 0;
+}
+.primary-number{
+	margin: 0 auto;
+	display: none;
+	font-size: 10rem;
+	font-weight: bold;
+	margin-top: 200px;
+	
+}
+.secondary-number{
+	display: none;
+	margin: 0 auto;
+	font-size: 10rem;
+	font-weight: bold;
+	margin-top: 200px;
+}
+.info{
+	display: none;
+	margin: 0 auto;
+	font-size: 10rem;
+	font-weight: bold;
+	margin-top: 200px;
+}
+.numbers{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
