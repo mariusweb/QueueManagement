@@ -1,0 +1,32 @@
+{
+	"takingBack": [
+		{
+			"firstName": "Tomas",
+			"lastName": "Tomasius"
+		},
+		{
+			"firstName": "Algis",
+			"lastName": "Algiauskas"
+		}
+	],
+	"turnIn": [
+		{
+			"firstName": "Aistė",
+			"lastName": "Aistytė"
+		},
+		{
+			"firstName": "Jolita",
+			"lastName": "Jolitauskienė"
+		}
+	],
+	"information":[
+		{
+			"firstName": "Justina",
+			"subject": "Siuntinio kainos"
+		},
+		{
+			"firstName": "Arnas",
+			"subject": "Siuntimo trukmė"
+		}
+	]
+}
