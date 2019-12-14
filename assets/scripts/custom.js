@@ -42,6 +42,12 @@
 
 		// JSON 
 
+
+		fetch("https://raw.githubusercontent.com/mariusweb/QueueManagement/master/assets/json/clients.json").then(function(resp){
+			return resp.json();
+		}).then(function(data){
+			console.log(data);
+		});
 		// xhr.open("GET", chrome.extention.getURL("../json/clients.json"), true);
 		// xhr.send();
 
