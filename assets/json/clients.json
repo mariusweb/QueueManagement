@@ -2,31 +2,37 @@
 	"takingBack": [
 		{
 			"firstName": "Tomas",
-			"lastName": "Tomasius"
+			"lastName": "Tomasius",
+			"number": "1"
 		},
 		{
 			"firstName": "Algis",
-			"lastName": "Algiauskas"
+			"lastName": "Algiauskas",
+			"number": "2"
 		}
 	],
 	"turnIn": [
 		{
 			"firstName": "Aistė",
-			"lastName": "Aistytė"
+			"lastName": "Aistytė",
+			"number": "101"
 		},
 		{
 			"firstName": "Jolita",
-			"lastName": "Jolitauskienė"
+			"lastName": "Jolitauskienė",
+			"number": "102"
 		}
 	],
 	"information":[
 		{
 			"firstName": "Justina",
-			"subject": "Siuntinio kainos"
+			"subject": "Siuntinio kainos",
+			"number": "201"
 		},
 		{
 			"firstName": "Arnas",
-			"subject": "Siuntimo trukmė"
+			"subject": "Siuntimo trukmė",
+			"number": "202"
 		}
 	]
 }

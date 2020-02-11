@@ -1,107 +1,146 @@
-(function(){
-
 "use strict";
 
-		let primaryButton = document.querySelector(".btn-primary");
-
-		// On clickind 
-		primaryButton.addEventListener("click", function(e){
-		e.preventDefault();
-
-		// Showe number
-		let showPrimary = document.querySelector(".primary-number");
-		let show = showPrimary.style.display='flex';
-
-		// Hide everything accept number
-		let hideContainer = document.querySelector(".register-container");
-		let hide = hideContainer.style.display='none';
-
-		// Count numbers
-		let counter = document.querySelector(".primary-number");
-	 	let textArray = counter.innerHTML.split(" ");
-	 	textArray[1] = textArray[1] * 1 + 1;
-
-	 	// Count numbers until 99 and start over from 1
-	 	if(textArray[1] >= 100){
-	 		textArray[1] = 0;
-	 	}
-		counter.innerHTML = textArray.join(" ");
-		// Setting timer for showing number
-		setTimeout(function () {
-			const showPrimary = document.querySelector(".primary-number").style.display='none';
-			let hideContainer = document.querySelector(".register-container").style.display='flex';
-		}, 2000);
-
-
-		// LocalStorage
-		//let showScoreboard = document.querySelector(".taking-back");
-		 	
-		localStorage.setItem("key1", textArray[1]);
-
-		let getForTakingBack = localStorage.getItem("key1");
-
-		// JSON 
-
-
-		fetch("https://raw.githubusercontent.com/mariusweb/QueueManagement/master/assets/json/clients.json").then(function(resp){
-			return resp.json();
-		}).then(function(data){
-			console.log(data);
-		});
-		// xhr.open("GET", chrome.extention.getURL("../json/clients.json"), true);
-		// xhr.send();
-
+		fetch("https://raw.githubusercontent.com/mariusweb/QueueManagement/master/assets/json/clients.json")
+		.then(resp => resp.json())
+		.then(data => {
+			let dataStringify = JSON.stringify(data);
+			localStorage.setItem('data', dataStringify);
+			let dataParse = localStorage.getItem('data');
+			let takeBack = JSON.parse(dataParse);
+			
+			console.log(takeBack.takingBack);
+			
 
 		});
 
+		document.querySelector(".btn-outline-primary").addEventListener("click", function(e){
+			e.preventDefault();
+				// Showe number
+				document.querySelector(".primary-number").style.display='flex';
+				
+	
+				// Hide everything accept number
+				document.querySelector(".register-container").style.display='none';
+				document.querySelector(".take-back").style.display='none';
+	
+				// Count numbers
+				let counter = document.querySelector(".primary-number");
+				let textArray = counter.innerHTML.split(" ");
+				textArray[0] = textArray[0] * 1 + 1;
+	
+				// Count numbers until 99 and start over from 1
+				if(textArray[0] >= 100){
+					textArray[0] = 0;
+				}
+				counter.innerHTML = textArray.join(" ");
+				// Setting timer for showing number
+				setTimeout(function () {
+					document.querySelector(".primary-number").style.display='none';
+					document.querySelector(".register-container").style.display='flex';
+				}, 2000);
 
 
+		});
+		document.querySelector(".btn-primary").addEventListener("click", function(e){
+			e.preventDefault();
+			document.querySelector(".take-back").style.display='flex';
+
+			document.querySelector(".register-container").style.display='none';
+
+		});
 
 		
 
 
-		let secondaryButton = document.querySelector(".btn-secondary");
-		secondaryButton.addEventListener("click", function(e){
-		e.preventDefault();
-		let showSecondary = document.querySelector(".secondary-number");
-		let show = showSecondary.style.display='flex';
-		let hideContainer = document.querySelector(".register-container");
-		let hide = hideContainer.style.display='none';
-		let counter = document.querySelector(".secondary-number");
-	 	let textArray = counter.innerHTML.split(" ");
-	 	textArray[1] = textArray[1] * 1 + 1;
-	 	if(textArray[1] >= 200){
-	 		textArray[1] = 100;
-	 	}
-	 	counter.innerHTML = textArray.join(" ");
-		setTimeout(function () {
-			let showSecondary = document.querySelector(".secondary-number").style.display='none';
-			let hideContainer = document.querySelector(".register-container").style.display='flex';
-		}, 2000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		document.querySelector(".btn-outline-success").addEventListener("click", function(e){
+			e.preventDefault();
+			document.querySelector(".secondary-number").style.display='flex';
+			document.querySelector(".register-container").style.display='none';
+			document.querySelector(".turn-in").style.display='none';
+			
+			let counter = document.querySelector(".secondary-number");
+			let textArray = counter.innerHTML.split(" ");
+			textArray[0] = textArray[0] * 1 + 1;
+			if(textArray[0] >= 200){
+				textArray[0] = 100;
+			}
+			counter.innerHTML = textArray.join(" ");
+			setTimeout(function () {
+				document.querySelector(".secondary-number").style.display='none';
+				document.querySelector(".register-container").style.display='flex';
+			}, 2000);
+		});
+
+		document.querySelector(".btn-success").addEventListener("click", function(e){
+			e.preventDefault();
+
+			document.querySelector(".turn-in").style.display='flex';
+
+			document.querySelector(".register-container").style.display='none';
+
+
 		});
 
 
-		let infoButton = document.querySelector(".btn-info");
-		infoButton.addEventListener("click", function(e){
+
+
+
+
+
+
+
+
+
+
+
+
+
+		document.querySelector(".btn-outline-info").addEventListener("click", function(e){
 		e.preventDefault();
-		let showInfo = document.querySelector(".info");
-		let show = showInfo.style.display='flex';
-		let hideContainer = document.querySelector(".register-container");
-		let hide = hideContainer.style.display='none';
+		document.querySelector(".info").style.display='flex';
+		document.querySelector(".register-container").style.display='none';
+		document.querySelector(".info-form").style.display='none';
+
 		let counter = document.querySelector(".info");
 	 	let textArray = counter.innerHTML.split(" ");
-	 	textArray[1] = textArray[1] * 1 + 1;
-	 	if(textArray[1] >= 300){
-	 		textArray[1] = 200;
+	 	textArray[0] = textArray[0] * 1 + 1;
+	 	if(textArray[0] >= 300){
+	 		textArray[0] = 200;
 	 	}
 	 	counter.innerHTML = textArray.join(" ");
 		setTimeout(function () {
-			let showInfo = document.querySelector(".info").style.display='none';
-			let hideContainer = document.querySelector(".register-container").style.display='flex';
+			document.querySelector(".info").style.display='none';
+			document.querySelector(".register-container").style.display='flex';
 		}, 2000);
+		});
+		document.querySelector(".btn-info").addEventListener("click", function(e){
+			e.preventDefault();
+
+			document.querySelector(".turn-in").style.display='flex';
+
+			document.querySelector(".register-container").style.display='none';
+
+
 		});
 		
 	
-	
+
 console.log("Veikia");
-}());
